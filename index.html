@@ -5,28 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rynly Help Guides</title>
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; }
-    .container { max-width: 800px; margin: 0 auto; padding: 16px; }
-    h1 { font-size: 20px; margin: 0 0 12px; }
-    p { margin: 0 0 16px; opacity: 0.8; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+    }
 
-    .list { display: grid; gap: 12px; }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      opacity: 0.8;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
     .item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 14px;
+      padding: 14px;
       border: 1px solid #e6e6e6;
       border-radius: 10px;
       text-decoration: none;
       color: inherit;
+      background: #fff;
     }
-    .item:active { transform: scale(0.99); }
-    .title { font-weight: 600; }
-    .meta { font-size: 12px; opacity: 0.7; margin-top: 4px; }
-    .arrow { font-size: 18px; opacity: 0.6; }
 
-    .footer { margin-top: 20px; font-size: 12px; opacity: 0.7; }
+    .item:active {
+      transform: scale(0.99);
+    }
+
+    .title {
+      font-weight: 600;
+    }
+
+    .meta {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    .arrow {
+      font-size: 18px;
+      opacity: 0.6;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
   </style>
 </head>
 <body>
@@ -53,8 +94,16 @@
 
       <a class="item" href="manageissues.html">
         <div>
-          <div class="title">Manage Issues</div>
+          <div class="title">Manage issues</div>
           <div class="meta">Common issues and fixes</div>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="item" href="video.html">
+        <div>
+          <div class="title">Video walkthrough</div>
+          <div class="meta">Short demo</div>
         </div>
         <div class="arrow">›</div>
       </a>
