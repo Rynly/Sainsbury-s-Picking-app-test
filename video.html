@@ -5,10 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Video</title>
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background: #fff; }
-    .topbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
-    .topbar a { text-decoration: none; color: inherit; font-weight: 600; }
-    .container { max-width: 900px; margin: 0 auto; padding: 16px; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
     .video-wrap {
       position: relative;
       width: 100%;
@@ -17,6 +42,7 @@
       overflow: hidden;
       background: #000;
     }
+
     .video-wrap iframe {
       position: absolute;
       inset: 0;
@@ -24,7 +50,12 @@
       height: 100%;
       border: 0;
     }
-    .note { margin-top: 12px; font-size: 13px; opacity: 0.75; }
+
+    .note {
+      margin-top: 12px;
+      font-size: 13px;
+      opacity: 0.75;
+    }
   </style>
 </head>
 <body>
@@ -35,9 +66,8 @@
 
   <div class="container">
     <div class="video-wrap">
-      <!-- Replace VIDEO_ID below -->
       <iframe
-        src="https://youtu.be/mZZavSAy0GM"
+        src="https://www.youtube-nocookie.com/embed/mZZavSAy0GM?rel=0&modestbranding=1&playsinline=1"
         title="How to use Rynly"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
@@ -45,7 +75,7 @@
     </div>
 
     <div class="note">
-      If the device opens the YouTube app anyway, your in-app browser/webview is forcing external playback.
+      If playback is blocked, the device policy may restrict embedded video.
     </div>
   </div>
 </body>
