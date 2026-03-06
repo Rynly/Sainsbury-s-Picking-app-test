@@ -18,9 +18,26 @@
       padding: 16px;
     }
 
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 20px;
+    }
+
     h1 {
       font-size: 24px;
-      margin: 0 0 20px;
+      line-height: 1.2;
+      margin: 0;
+      flex: 1;
+    }
+
+    .logo {
+      height: 24px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
     }
 
     h2 {
@@ -69,20 +86,18 @@
 
     .faq-list {
       display: grid;
-      gap: 12px;
     }
 
     details {
-      border: 1px solid #e6e6e6;
-      border-radius: 10px;
-      background: #fff;
-      overflow: hidden;
+      border-bottom: 1px solid #d9d9d9;
+      padding: 0;
+      margin: 0;
     }
 
     summary {
       list-style: none;
       cursor: pointer;
-      padding: 14px;
+      padding: 14px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -99,25 +114,20 @@
     }
 
     .dropdown-arrow {
-      font-size: 18px;
-      opacity: 0.6;
+      font-size: 16px;
+      opacity: 0.65;
       flex-shrink: 0;
-      transition: transform 0.2s ease;
-    }
-
-    details[open] .dropdown-arrow {
-      transform: rotate(90deg);
+      line-height: 1;
     }
 
     .answer {
-      padding: 0 14px 14px 14px;
-      border-top: 1px solid #f0f0f0;
+      padding: 0 0 14px 0;
       font-size: 14px;
       line-height: 1.5;
     }
 
     .answer p {
-      margin: 12px 0 0;
+      margin: 0;
     }
 
     .answer img {
@@ -144,7 +154,7 @@
   <div class="container">
     <div class="header">
       <h1>Help Centre</h1>
-      <img src="images/logo/rynly-logo.png" alt="Rynly Logo" class="logo">
+      <img src="images/logo/rynly-logo.png" alt="Rynly logo" class="logo" />
     </div>
 
     <h2>Select a guide:</h2>
@@ -179,7 +189,7 @@
       <details>
         <summary>
           <span class="summary-text">1. How to identify an order?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -189,7 +199,7 @@
       <details>
         <summary>
           <span class="summary-text">2. How to keep alerts ringing for new orders?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -199,7 +209,7 @@
       <details>
         <summary>
           <span class="summary-text">3. Why can't I pick this bundle order?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -209,7 +219,7 @@
       <details>
         <summary>
           <span class="summary-text">4. How to request an extra driver for large orders?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -219,7 +229,7 @@
       <details>
         <summary>
           <span class="summary-text">5. How to clear old hanging/stuck orders?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -229,7 +239,7 @@
       <details>
         <summary>
           <span class="summary-text">6. How to contact support?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -239,7 +249,7 @@
       <details>
         <summary>
           <span class="summary-text">7. How to manage/pick a bundle?</span>
-          <span class="dropdown-arrow">›</span>
+          <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
           <p class="placeholder">Add answer text, image, or both here.</p>
@@ -251,5 +261,18 @@
       Tip: Use the device back button to return here.
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll("details").forEach((detail) => {
+      const arrow = detail.querySelector(".dropdown-arrow");
+
+      const updateArrow = () => {
+        arrow.textContent = detail.open ? "⌃" : "⌄";
+      };
+
+      updateArrow();
+      detail.addEventListener("toggle", updateArrow);
+    });
+  </script>
 </body>
 </html>
