@@ -127,7 +127,11 @@
     }
 
     .answer p {
-      margin: 0;
+      margin: 0 0 12px 0;
+    }
+
+    .answer p:last-child {
+      margin-bottom: 0;
     }
 
     .answer img {
@@ -136,11 +140,6 @@
       border-radius: 8px;
       margin-top: 12px;
       display: block;
-    }
-
-    .placeholder {
-      color: #666;
-      font-style: italic;
     }
 
     .footer {
@@ -186,15 +185,21 @@
 
     <h2>FAQ:</h2>
     <div class="faq-list">
-     <details>
-      <summary>1. How to identify an order?</summary>
-      <div class="answer">
-        <p>
-          The image below shows how to identify what type of order has been placed by a customer from the Rynly picking app home page. It is important to note which on demand channel (e.g Just Eat/Uber Eats) an order has come from as channel has its own compatibities with substitutes etc.
-        </p>
-        <img src="images/FAQ/FAQ1.png" alt="Example showing how to identify an order in the Rynly app">
-      </div>
-    </details>
+      <details>
+        <summary>
+          <span class="summary-text">1. How to identify an order?</span>
+          <span class="dropdown-arrow">⌄</span>
+        </summary>
+        <div class="answer">
+          <p>
+            The image below shows how to identify what type of order has been placed by a customer from the Rynly picking app home page.
+          </p>
+          <p>
+            It is important to note which on-demand channel an order has come from, for example Just Eat or Uber Eats, as each channel has its own compatibilities with substitutes and other workflows.
+          </p>
+          <img src="images/FAQ/FAQ1.png" alt="Example showing how to identify an order in the Rynly app" />
+        </div>
+      </details>
 
       <details>
         <summary>
@@ -202,12 +207,12 @@
           <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
-          <p class="placeholder">Please follow the troubleshooting steps to ensure alerts are ringing on devices.
-- Volume: Checked the volume on the handset and in the app, all set to max volume
-- Keep the App Active: The Rynly app must remain open or running in the background at all times.
-- Do Not Force Close: Users should not swipe up on the app, as this fully closes the application and prevents notifications from arriving. 
-- Notification modal: If a device is correctly configured to receive alerts, the "Rynly Hub Alerts Enabled" modal will be visible on the sleep screen and persistantly stay on this screen (please see the image below):</p>
-           <img src="images/FAQ/FAQ2.png" alt="Alerts not riging trouble">
+          <p>Please follow the troubleshooting steps below to ensure alerts are ringing on devices:</p>
+          <p>- Volume: check the volume on the handset and in the app, and ensure both are set to maximum.</p>
+          <p>- Keep the app active: the Rynly app must remain open or running in the background at all times.</p>
+          <p>- Do not force close: users should not swipe up on the app, as this fully closes the application and prevents notifications from arriving.</p>
+          <p>- Notification modal: if a device is correctly configured to receive alerts, the "Rynly Hub Alerts Enabled" modal will be visible on the sleep screen and will remain visible persistently, as shown below.</p>
+          <img src="images/FAQ/FAQ2.png" alt="Alerts troubleshooting" />
         </div>
       </details>
 
@@ -217,15 +222,15 @@
           <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
-          <p class="placeholder">
-            Requesting an extra driver works differently for each channel.
-            For Just Eat orders, please follow the directions below</p>
-          <img src="images/FAQ/FAQ3.png" alt="Alerts not riging trouble">
-          <p class="placeholder"> For Uber Eats orders, please follow the directions below</p>
-          <img src="images/FAQ/FAQ4.png" alt="Alerts not riging trouble">
-          <p class="placeholder"> For Chop Chop orders, please follow the directions below</p>
-          <img src="images/FAQ/FAQ5.png" alt="Alerts not riging trouble">
+          <p>Requesting an extra driver works differently for each channel.</p>
+          <p>For Just Eat orders, please follow the directions below.</p>
+          <img src="images/FAQ/FAQ3.png" alt="Just Eat extra driver instructions" />
 
+          <p>For Uber Eats orders, please follow the directions below.</p>
+          <img src="images/FAQ/FAQ4.png" alt="Uber Eats extra driver instructions" />
+
+          <p>For Chop Chop orders, please follow the directions below.</p>
+          <img src="images/FAQ/FAQ5.png" alt="Chop Chop extra driver instructions" />
         </div>
       </details>
 
@@ -235,7 +240,7 @@
           <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
-          <p class="placeholder">Add answer text, image, or both here.</p>
+          <p>Add answer text, image, or both here.</p>
         </div>
       </details>
 
@@ -245,10 +250,10 @@
           <span class="dropdown-arrow">⌄</span>
         </summary>
         <div class="answer">
-          <p class="placeholder"> Just Eat support: 0208 736 2000
-                                  Uber Eats support: 0808 178 5518
-                                  Chop Chop support:
-                                  Rynly support: 0808 189 5095 </p>
+          <p>Just Eat support: 0208 736 2000</p>
+          <p>Uber Eats support: 0808 178 5518</p>
+          <p>Chop Chop support:</p>
+          <p>Rynly support: 0808 189 5095</p>
         </div>
       </details>
     </div>
@@ -261,6 +266,8 @@
   <script>
     document.querySelectorAll("details").forEach((detail) => {
       const arrow = detail.querySelector(".dropdown-arrow");
+
+      if (!arrow) return;
 
       const updateArrow = () => {
         arrow.textContent = detail.open ? "⌃" : "⌄";
